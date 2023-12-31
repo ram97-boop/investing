@@ -12,7 +12,7 @@ from src.investing.compound import compound
             0.2473,
             0.002,
             3,
-            193661.51078, # what the value is after 3 years or "time periods".
+            193661.51078,  # what the value is after 3 years or "time periods".
         ),
     ],
 )
