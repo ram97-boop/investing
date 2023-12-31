@@ -1,4 +1,4 @@
-import pytest
+from compound import compound
 
 
 def test_compound():
