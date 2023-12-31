@@ -5,3 +5,7 @@ test:
 .PHONY: format
 format:
 	black .
+
+.PHONY: run
+run:
+	python3 src/investing/compound.py
