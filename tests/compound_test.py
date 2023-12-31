@@ -1,4 +1,4 @@
-from compound import compound
+from src.investing.compound import compound
 
 
 def test_compound():
