@@ -1,21 +1,30 @@
-def compound(sum, annual_return, annual_cost, years):
-    result = (
-        sum * (1 + annual_return - annual_cost - (annual_return * annual_cost)) ** years
+def compound(sum, annual_return, annual_cost, annual_installment, years):
+    result = sum * (
+        (1 + annual_return - annual_cost - annual_return * annual_cost) ** years
     )
 
-    return result
+    annual_installment_result = 0
+    for y in range(1, years):
+        annual_installment_result += annual_installment * (
+            (1 + annual_return - annual_cost - annual_return * annual_cost) ** y
+        )
+
+    return result + annual_installment_result
 
 
 if __name__ == "__main__":
     while True:
-        input_str = input("Enter: start_sum  annual_return  annual_cost  years\n>")
+        input_str = input(
+            "Enter: start_sum  annual_return  annual_cost  annual_installment  years\n>"
+        )
         input_list = input_str.split()
         try:
             result = compound(
                 float(input_list[0]),
                 float(input_list[1]),
                 float(input_list[2]),
-                int(input_list[3]),
+                float(input_list[3]),
+                int(input_list[4]),
             )
             print("\nThe value is: " + str(result) + "\n")
 
