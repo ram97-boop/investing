@@ -1,15 +1,16 @@
 def compound(sum, annual_return, annual_cost, years):
-    for _ in range(years):
-        sum *= (1 + annual_return) * (1 - annual_cost)
+    # for _ in range(years):
+    #     sum *= (1 + annual_return) * (1 - annual_cost)
+    result = (
+        sum * (1 + annual_return - annual_cost - (annual_return * annual_cost)) ** years
+    )
 
-    return sum
+    return result
 
 
 if __name__ == "__main__":
     while True:
-        input_str = input(
-            "Enter: start_sum  annual_return  annual_cost  years\n>"
-        )
+        input_str = input("Enter: start_sum  annual_return  annual_cost  years\n>")
         input_list = input_str.split()
         try:
             result = compound(
