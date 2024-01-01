@@ -1,10 +1,10 @@
 def compound(sum, annual_return, annual_cost, annual_installment, years):
-    rate = 1 + annual_return - annual_cost - annual_return * annual_cost
+    rate = 1 + annual_return - annual_cost
 
     result = sum * (rate**years)
 
     annual_installment_result = 0
-    for y in range(1, years):
+    for y in range(1, years):  # installments start from the 2nd year
         annual_installment_result += annual_installment * (rate**y)
 
     return result + annual_installment_result
