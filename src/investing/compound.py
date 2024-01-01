@@ -19,6 +19,6 @@ if __name__ == "__main__":
                 int(input_list[3]),
             )
             print("\nThe value is: " + str(result) + "\n")
-            break
+
         except Exception as e:
             print("\n" + str(e) + "\n")
