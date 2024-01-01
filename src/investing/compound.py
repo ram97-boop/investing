@@ -1,13 +1,11 @@
 def compound(sum, annual_return, annual_cost, annual_installment, years):
-    result = sum * (
-        (1 + annual_return - annual_cost - annual_return * annual_cost) ** years
-    )
+    rate = 1 + annual_return - annual_cost - annual_return * annual_cost
+
+    result = sum * (rate**years)
 
     annual_installment_result = 0
     for y in range(1, years):
-        annual_installment_result += annual_installment * (
-            (1 + annual_return - annual_cost - annual_return * annual_cost) ** y
-        )
+        annual_installment_result += annual_installment * (rate**y)
 
     return result + annual_installment_result
 
