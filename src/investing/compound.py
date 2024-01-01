@@ -1,6 +1,4 @@
 def compound(sum, annual_return, annual_cost, years):
-    # for _ in range(years):
-    #     sum *= (1 + annual_return) * (1 - annual_cost)
     result = (
         sum * (1 + annual_return - annual_cost - (annual_return * annual_cost)) ** years
     )
